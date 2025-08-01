@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us - The Admin Media Concept | Creative & Digital Services</title>
+    <meta name="description" content="Learn about Emmanuel Ayomide and The Admin Media Concept's journey in providing professional graphic design, digital marketing, and creative solutions." />
+    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="icon" type="png" href="THE-ADMIN-MEDIA-CONCEPT-NEW-LOGO - Copy.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Ftheadmin6325back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.6"></script>
+</head>
+<body class="bg-background text-text-primary">
+    <!-- Navigation Header -->
+    <nav class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm shadow-base z-50" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <a href="homepage.html" class="flex items-center space-x-2">
+                        <div class="w-10 h-10 flex items-center justify-center">
+                            <img src="THE-ADMIN-MEDIA-CONCEPT-NEW-LOGO - Copy.png" alt="">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                        </div>
+                        <span class="font-heading font-bold text-xl text-primary">The Admin Media Concept</span>
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="homepage.html" class="text-text-secondary hover:text-primary px-3 py-2 rounded-md text-sm transition-colors">Home</a>
+                        <a href="about_page.html" class="text-primary font-medium px-3 py-2 rounded-md text-sm hover:bg-primary-50 transition-colors">About</a>
+                        <a href="services_page.html" class="text-text-secondary hover:text-primary px-3 py-2 rounded-md text-sm transition-colors">Services</a>
+                        <a href="portfolio_page.html" class="text-text-secondary hover:text-primary px-3 py-2 rounded-md text-sm transition-colors">Portfolio</a>
+                        <a href="contact_page.html" class="text-text-secondary hover:text-primary px-3 py-2 rounded-md text-sm transition-colors">Contact</a>
+                    </div>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button type="button" class="text-text-secondary hover:text-primary focus:outline-none focus:text-primary" id="mobile-menu-button">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div class="md:hidden hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t border-border-light">
+                <a href="homepage.html" class="text-text-secondary hover:text-primary block px-3 py-2 rounded-md text-base font-medium transition-colors">Home</a>
+                <a href="about_page.html" class="text-primary block px-3 py-2 rounded-md text-base font-medium bg-primary-50">About</a>
+                <a href="services_page.html" class="text-text-secondary hover:text-primary block px-3 py-2 rounded-md text-base font-medium transition-colors">Services</a>
+                <a href="portfolio_page.html" class="text-text-secondary hover:text-primary block px-3 py-2 rounded-md text-base font-medium transition-colors">Portfolio</a>
+                <a href="contact_page.html" class="text-text-secondary hover:text-primary block px-3 py-2 rounded-md text-base font-medium transition-colors">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <section class="pt-20 pb-4 bg-surface">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <nav class="flex" aria-label="Breadcrumb">
+                <ol class="flex items-center space-x-2">
+                    <li>
+                        <a href="homepage.html" class="text-text-secondary hover:text-primary transition-colors">
+                            <i class="fas fa-home mr-1"></i>
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <svg class="w-4 h-4 text-text-secondary mx-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                    </li>
+                    <li>
+                        <span class="text-primary font-medium">About</span>
+                    </li>
+                </ol>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Hero Section -->
+    <section class="py-16 bg-primary text-white relative overflow-hidden">
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 opacity-10">
+            <svg class="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+                <defs>
+                    <pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse">
+                        <path d="M 10 0 L 0 0 0 10" fill="none" stroke="currentColor" stroke-width="0.5"/>
+                    </pattern>
+                </defs>
+                <rect width="100" height="100" fill="url(#grid)"/>
+            </svg>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-6">
+                    About <span class="text-secondary">The Admin Media Concept</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed">
+                    Transforming ideas into visual masterpieces and digital experiences that connect brands with their audience.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Values Section -->
+    <section class="py-20 bg-background">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Mission Content -->
+                <div class="mission-content">
+                    <h2 class="text-3xl md:text-4xl font-heading font-bold text-primary mb-6">
+                        Our Mission
+                    </h2>
+                    <p class="text-lg text-text-secondary mb-6 leading-relaxed">
+                        At The Admin Media Concept, we believe in the power of creative communication to transform businesses and connect brands with their audiences. Our mission is to provide exceptional design and digital solutions that not only look stunning but also drive real results for our clients.
+                    </p>
+                    <p class="text-lg text-text-secondary mb-8 leading-relaxed">
+                        We are committed to delivering innovative, professional, and affordable creative services that help small businesses and startups establish their brand presence and achieve their goals in the digital landscape.
+                    </p>
+                    
+                    <!-- Core Values -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                                <i class="fas fa-lightbulb text-secondary text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-heading font-semibold text-primary mb-2">Innovation</h3>
+                                <p class="text-text-secondary text-sm">Pushing creative boundaries with fresh ideas and modern solutions.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                                <i class="fas fa-heart text-secondary text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-heading font-semibold text-primary mb-2">Passion</h3>
+                                <p class="text-text-secondary text-sm">Dedicated to excellence in every project we undertake.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                                <i class="fas fa-handshake text-secondary text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-heading font-semibold text-primary mb-2">Partnership</h3>
+                                <p class="text-text-secondary text-sm">Building lasting relationships with our clients through trust and collaboration.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                                <i class="fas fa-award text-secondary text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-heading font-semibold text-primary mb-2">Quality</h3>
+                                <p class="text-text-secondary text-sm">Delivering exceptional results that exceed expectations.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mission Image -->
+                <div class="mission-image">
+                    <div class="relative overflow-hidden rounded-lg shadow-lg">
+                        <div class="aspect-w-16 aspect-h-9" style="aspect-ratio: 16/9;">
+                            <img src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg" alt="Creative workspace showcasing design process" class="w-full h-full object-cover fade-in-image" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                        </div>
+                        <div class="absolute inset-0 bg-primary/20"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Founder Bio Section -->
+    <section class="py-20 bg-surface">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-primary mb-4">
+                    Meet Our Founder
+                </h2>
+                <p class="text-lg text-text-secondary max-w-3xl mx-auto">
+                    The creative mind and driving force behind The Admin Media Concept's success.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Bio Content -->
+                <div class="bio-content">
+                    <div class="mb-8">
+                        <h3 class="text-2xl md:text-3xl font-heading font-bold text-primary mb-2">
+                            Emmanuel Ayomide
+                        </h3>
+                        <p class="text-lg text-secondary font-medium mb-4">
+                            Founder & Creative Director
+                        </p>
+                        <div class="w-20 h-1 bg-secondary rounded-full"></div>
+                    </div>
+
+                    <div class="space-y-6 text-text-secondary leading-relaxed">
+                        <p class="text-lg">
+                            Emmanuel Ayomide is a passionate creative professional with over <strong class="text-primary">5 years of experience</strong> in graphic design, digital marketing, and brand development. His journey began with a simple belief: that great design has the power to transform businesses and create meaningful connections between brands and their audiences.
+                        </p>
+                        
+                        <p>
+                            With a keen eye for detail and a deep understanding of modern design trends, Emmanuel has helped <strong class="text-primary">over 200 clients</strong> across various industries establish their brand presence and achieve their business goals. His expertise spans from logo design and brand identity to web development and digital marketing strategies.
+                        </p>
+                        
+                        <p>
+                            Emmanuel's approach to design is rooted in understanding each client's unique story and translating that into compelling visual narratives. He believes that effective design goes beyond aesthetics – it should communicate, engage, and inspire action.
+                        </p>
+                        
+                        <div class="bg-primary-50 p-6 rounded-lg border-l-4 border-primary">
+                            <p class="italic text-primary font-medium">
+                                "Design is not just what it looks like and feels like. Design is how it works. My goal is to create designs that not only look beautiful but also serve a purpose and drive results for my clients."
+                            </p>
+                            <p class="text-sm text-text-secondary mt-2">- Emmanuel Ayomide</p>
+                        </div>
+                        
+                        <p>
+                            When he's not creating stunning designs, Emmanuel enjoys exploring new creative techniques, staying updated with industry trends, and mentoring aspiring designers. He is committed to continuous learning and innovation, ensuring that The Admin Media Concept remains at the forefront of creative excellence.
+                        </p>
+                    </div>
+
+                    <!-- Achievements -->
+                    <div class="mt-8 grid grid-cols-2 gap-6">
+                        <div class="text-center">
+                            <div class="text-3xl font-heading font-bold text-primary">200+</div>
+                            <div class="text-sm text-text-secondary">Happy Clients</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-heading font-bold text-primary">5+</div>
+                            <div class="text-sm text-text-secondary">Years Experience</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-heading font-bold text-primary">500+</div>
+                            <div class="text-sm text-text-secondary">Projects Completed</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-heading font-bold text-primary">27</div>
+                            <div class="text-sm text-text-secondary">Services Offered</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bio Image -->
+                <div class="bio-image">
+                    <div class="relative overflow-hidden rounded-lg shadow-lg">
+                        <div class="aspect-w-16 aspect-h-9" style="aspect-ratio: 16/9;">
+                            <img src="https://images.pixabay.com/photo/2020/07/08/04/12/work-5382501_1280.jpg" alt="Emmanuel Ayomide - Founder of The Admin Media Concept" class="w-full h-full object-cover fade-in-image" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                        </div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-primary/30 to-transparent"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Company Timeline Section -->
+    <section class="py-20 bg-background">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-primary mb-4">
+                    Our Journey
+                </h2>
+                <p class="text-lg text-text-secondary max-w-3xl mx-auto">
+                    From humble beginnings to becoming a trusted creative partner for businesses worldwide.
+                </p>
+            </div>
+
+            <!-- Timeline -->
+            <div class="relative">
+                <!-- Timeline Line -->
+                <div class="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 w-0.5 h-full bg-primary-200"></div>
+
+                <!-- Timeline Items -->
+                <div class="space-y-12">
+                    <!-- 2020 -->
+                    <div class="timeline-item relative flex items-center">
+                        <div class="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 w-4 h-4 bg-primary rounded-full border-4 border-white shadow-md z-10"></div>
+                        <div class="ml-12 md:ml-0 md:w-1/2 md:pr-8 md:text-right">
+                            <div class="card">
+                                <div class="text-sm text-secondary font-medium mb-2">2020</div>
+                                <h3 class="text-xl font-heading font-semibold text-primary mb-3">The Beginning</h3>
+                                <p class="text-text-secondary">Emmanuel Ayomide founded The Admin Media Concept with a vision to help small businesses establish their brand presence through creative design solutions.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2021 -->
+                    <div class="timeline-item relative flex items-center md:flex-row-reverse">
+                        <div class="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 w-4 h-4 bg-secondary rounded-full border-4 border-white shadow-md z-10"></div>
+                        <div class="ml-12 md:ml-0 md:w-1/2 md:pl-8">
+                            <div class="card">
+                                <div class="text-sm text-secondary font-medium mb-2">2021</div>
+                                <h3 class="text-xl font-heading font-semibold text-primary mb-3">Service Expansion</h3>
+                                <p class="text-text-secondary">Expanded services to include web development, digital marketing, and video production, serving over 50 clients in the first year.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2022 -->
+                    <div class="timeline-item relative flex items-center">
+                        <div class="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 w-4 h-4 bg-primary rounded-full border-4 border-white shadow-md z-10"></div>
+                        <div class="ml-12 md:ml-0 md:w-1/2 md:pr-8 md:text-right">
+                            <div class="card">
+                                <div class="text-sm text-secondary font-medium mb-2">2022</div>
+                                <h3 class="text-xl font-heading font-semibold text-primary mb-3">Recognition & Growth</h3>
+                                <p class="text-text-secondary">Achieved recognition as a leading creative agency in Nigeria, completing over 200 projects and building a strong portfolio across various industries.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2023 -->
+                    <div class="timeline-item relative flex items-center md:flex-row-reverse">
+                        <div class="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 w-4 h-4 bg-secondary rounded-full border-4 border-white shadow-md z-10"></div>
+                        <div class="ml-12 md:ml-0 md:w-1/2 md:pl-8">
+                            <div class="card">
+                                <div class="text-sm text-secondary font-medium mb-2">2023</div>
+                                <h3 class="text-xl font-heading font-semibold text-primary mb-3">International Reach</h3>
+                                <p class="text-text-secondary">Extended services to international clients, establishing partnerships with businesses across Africa and beyond, while maintaining our commitment to quality and innovation.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2024 -->
+                    <div class="timeline-item relative flex items-center">
+                        <div class="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 w-4 h-4 bg-primary rounded-full border-4 border-white shadow-md z-10"></div>
+                        <div class="ml-12 md:ml-0 md:w-1/2 md:pr-8 md:text-right">
+                            <div class="card">
+                                <div class="text-sm text-secondary font-medium mb-2">2024</div>
+                                <h3 class="text-xl font-heading font-semibold text-primary mb-3">Innovation & Excellence</h3>
+                                <p class="text-text-secondary">Launched advanced digital solutions including AI-powered design tools and comprehensive brand strategy services, setting new standards in creative excellence.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2025 -->
+                    <div class="timeline-item relative flex items-center md:flex-row-reverse">
+                        <div class="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 w-4 h-4 bg-accent rounded-full border-4 border-white shadow-md z-10"></div>
+                        <div class="ml-12 md:ml-0 md:w-1/2 md:pl-8">
+                            <div class="card bg-primary-50 border border-primary-200">
+                                <div class="text-sm text-secondary font-medium mb-2">2025</div>
+                                <h3 class="text-xl font-heading font-semibold text-primary mb-3">Future Vision</h3>
+                                <p class="text-text-secondary">Continuing to push boundaries in creative design and digital innovation, with plans to expand our team and introduce cutting-edge services for the evolving digital landscape.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills & Expertise Section -->
+    <section class="py-20 bg-surface">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-primary mb-4">
+                    Skills & Expertise
+                </h2>
+                <p class="text-lg text-text-secondary max-w-3xl mx-auto">
+                    Our comprehensive skill set ensures we can handle any creative or technical challenge.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Creative Skills -->
+                <div class="card">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center mr-4">
+                            <i class="fas fa-palette text-secondary text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-heading font-semibold text-primary">Creative Design</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="skill-item">
+                            <div class="flex justify-between mb-2">
+                                <span class="text-sm font-medium text-text-primary">Graphic Design</span>
+                                <span class="text-sm text-text-secondary">95%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-secondary h-2 rounded-full" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="flex justify-between mb-2">
+                                <span class="text-sm font-medium text-text-primary">Logo Design</span>
+                                <span class="text-sm text-text-secondary">98%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-secondary h-2 rounded-full" style="width: 98%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="flex justify-between mb-2">
+                                <span class="text-sm font-medium text-text-primary">Brand Identity</span>
+                                <span class="text-sm text-text-secondary">92%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-secondary h-2 rounded-full" style="width: 92%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Technical Skills -->
+                <div class="card">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mr-4">
+                            <i class="fas fa-code text-primary text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-heading font-semibold text-primary">Technical Development</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="skill-item">
+                            <div class="flex justify-between mb-2">
+                                <span class="text-sm font-medium text-text-primary">Web Development</span>
+                                <span class="text-sm text-text-secondary">88%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-primary h-2 rounded-full" style="width: 88%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="flex justify-between mb-2">
+                                <span class="text-sm font-medium text-text-primary">UI/UX Design</span>
+                                <span class="text-sm text-text-secondary">85%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-primary h-2 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="flex justify-between mb-2">
+                                <span class="text-sm font-medium text-text-primary">E-commerce Solutions</span>
+                                <span class="text-sm text-text-secondary">80%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-primary h-2 rounded-full" style="width: 80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Media Skills -->
+                <div class="card">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mr-4">
+                            <i class="fas fa-video text-accent text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-heading font-semibold text-primary">Media Production</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="skill-item">
+                            <div class="flex justify-between mb-2">
+                                <span class="text-sm font-medium text-text-primary">Video Production</span>
+                                <span class="text-sm text-text-secondary">82%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-accent h-2 rounded-full" style="width: 82%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="flex justify-between mb-2">
+                                <span class="text-sm font-medium text-text-primary">Digital Marketing</span>
+                                <span class="text-sm text-text-secondary">90%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-accent h-2 rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="flex justify-between mb-2">
+                                <span class="text-sm font-medium text-text-primary">Content Creation</span>
+                                <span class="text-sm text-text-secondary">87%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-accent h-2 rounded-full" style="width: 87%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Client Testimonials Section -->
+    <section class="py-20 bg-background">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-primary mb-4">
+                    What Our Clients Say About Emmanuel
+                </h2>
+                <p class="text-lg text-text-secondary max-w-3xl mx-auto">
+                    Personal testimonials highlighting the quality of service and professional excellence.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="card text-center">
+                    <div class="mb-6">
+                        <div class="flex justify-center mb-4">
+                            <div class="flex text-secondary">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <p class="text-text-secondary italic mb-6">
+                            "Emmanuel's attention to detail and creative vision transformed our brand completely. His professionalism and dedication to excellence are unmatched. Working with him was a game-changer for our business."
+                        </p>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d" alt="David Okonkwo" class="w-12 h-12 rounded-full object-cover mr-4" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                        <div>
+                            <h4 class="font-heading font-semibold text-primary">David Okonkwo</h4>
+                            <p class="text-sm text-text-secondary">CEO, InnovateTech Solutions</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="card text-center">
+                    <div class="mb-6">
+                        <div class="flex justify-center mb-4">
+                            <div class="flex text-secondary">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <p class="text-text-secondary italic mb-6">
+                            "Emmanuel is not just a designer; he's a strategic partner who understands business needs. His ability to translate our vision into stunning visuals exceeded all expectations. Highly recommended!"
+                        </p>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <img src="https://images.pexels.com/photos/3785079/pexels-photo-3785079.jpeg" alt="Adunni Adebayo" class="w-12 h-12 rounded-full object-cover mr-4" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                        <div>
+                            <h4 class="font-heading font-semibold text-primary">Adunni Adebayo</h4>
+                            <p class="text-sm text-text-secondary">Founder, EcoFashion Nigeria</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="card text-center">
+                    <div class="mb-6">
+                        <div class="flex justify-center mb-4">
+                            <div class="flex text-secondary">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <p class="text-text-secondary italic mb-6">
+                            "The level of creativity and professionalism Emmanuel brings to every project is remarkable. He delivered beyond our expectations and helped us establish a strong brand presence in our market."
+                        </p>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <img src="https://images.pixabay.com/photo/2016/11/21/12/42/beard-1845166_1280.jpg" alt="Chukwuma Nwankwo" class="w-12 h-12 rounded-full object-cover mr-4" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                        <div>
+                            <h4 class="font-heading font-semibold text-primary">Chukwuma Nwankwo</h4>
+                            <p class="text-sm text-text-secondary">Director, AgriTech Innovations</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-primary text-white relative overflow-hidden">
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 opacity-10">
+            <svg class="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+                <defs>
+                    <pattern id="cta-grid" width="20" height="20" patternUnits="userSpaceOnUse">
+                        <circle cx="10" cy="10" r="1" fill="currentColor"/>
+                    </pattern>
+                </defs>
+                <rect width="100" height="100" fill="url(#cta-grid)"/>
+            </svg>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center">
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-6">
+                    Ready to Start Your Project?
+                </h2>
+                <p class="text-xl md:text-2xl text-white/90 mb-8 max-w-3xl mx-auto leading-relaxed">
+                    Let's work together to bring your vision to life and create something amazing that connects with your audience.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <a href="contact_page.html" class="btn-secondary text-lg px-8 py-4 rounded-lg font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg">
+                        Start Your Project
+                    </a>
+                    <a href="portfolio_page.html" class="bg-white/10 backdrop-blur-sm text-white border-2 border-white/30 px-8 py-4 rounded-lg font-semibold transition-all duration-300 hover:bg-white/20 hover:scale-105">
+                        View Our Work
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div class="lg:col-span-2">
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-10 h-10 flex items-center justify-center">
+                            <img src="THE-ADMIN-MEDIA-CONCEPT-NEW-LOGO - Copy.png" alt="">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                        </div>
+                        <span class="font-heading font-bold text-xl">The Admin Media Concept</span>
+                    </div>
+                    <p class="text-white/80 mb-6 max-w-md">
+                        Your trusted partner for creative and digital solutions. We help businesses transform their brand presence and connect with their audience effectively.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://web.facebook.com/profile.php?id=61577837131582" class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-white/20 transition-colors">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://x.com/AyomiOlowe" class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-white/20 transition-colors">
+                            <i class="fab fa-x"></i>
+                        </a>
+                        <a href="https://https://www.Instagram.com/theadmin001" class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-white/20 transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://youtube.com/@theadminmediaconcept" class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-white/20 transition-colors">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="https://www.tiktok.com/@admintech_" class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-white/20 transition-colors">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-heading font-semibold text-lg mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="homepage.html" class="text-white/80 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="about_page.html" class="text-white/80 hover:text-white transition-colors">About</a></li>
+                        <li><a href="services_page.html" class="text-white/80 hover:text-white transition-colors">Services</a></li>
+                        <li><a href="portfolio_page.html" class="text-white/80 hover:text-white transition-colors">Portfolio</a></li>
+                        <li><a href="contact_page.html" class="text-white/80 hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="font-heading font-semibold text-lg mb-4">Contact Info</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-phone mr-2 text-secondary"></i>
+                            <a href="tel:+2348035543302" class="text-white/80 hover:text-white transition-colors">+234 803 554 3302</a>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-2 text-secondary"></i>
+                            <a href="mailto:tmediaconcept625@gmail.com" class="text-white/80 hover:text-white transition-colors">theadminmedia@gmail.com</a>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-map-marker-alt mr-2 text-secondary"></i>
+                            <span class="text-white/80">Ilesha, Nigeria</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-white/20 mt-8 pt-8 text-center">
+                <p class="text-white/80">
+                    © 2025 The Admin Media Concept. All Rights Reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Fade-in animation for images
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe fade-in images
+        document.querySelectorAll('.fade-in-image').forEach(img => {
+            img.style.opacity = '0';
+            img.style.transform = 'translateY(20px)';
+            img.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+            observer.observe(img);
+        });
+
+        // Timeline items animation
+        document.querySelectorAll('.timeline-item').forEach(item => {
+            item.style.opacity = '0';
+            item.style.transform = 'translateY(30px)';
+            item.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+            observer.observe(item);
+        });
+
+        // Skills animation
+        document.querySelectorAll('.skill-item').forEach(skill => {
+            observer.observe(skill);
+        });
+
+        // Navbar background on scroll
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('bg-white/95');
+                navbar.classList.remove('bg-white/90');
+            } else {
+                navbar.classList.add('bg-white/90');
+                navbar.classList.remove('bg-white/95');
+            }
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Animate skill bars when in view
+        const skillObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const progressBar = entry.target.querySelector('.bg-secondary, .bg-primary, .bg-accent');
+                    if (progressBar) {
+                        const width = progressBar.style.width;
+                        progressBar.style.width = '0%';
+                        setTimeout(() => {
+                            progressBar.style.transition = 'width 1.5s ease-out';
+                            progressBar.style.width = width;
+                        }, 200);
+                    }
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.querySelectorAll('.skill-item').forEach(skill => {
+            skillObserver.observe(skill);
+        });
+    </script>
+<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+</body>
+</html>
