@@ -1,1055 +1,300 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio - The Admin Media Concept | Creative & Digital Services</title>
-    <meta name="description" content="Explore our portfolio of successful projects including graphic design, web development, and media production. See how The Admin Media Concept transforms brands." />
-    <link rel="stylesheet" href="main.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="icon" type="png" href="THE-ADMIN-MEDIA-CONCEPT-NEW-LOGO - Copy.png">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Ftheadmin6325back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.6"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio | The Admin Media Concept</title>
+  <meta name="description" content="Explore our portfolio of creative projects including logo design, web development, digital marketing, and more." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    .portfolio-full { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.5rem; }
+    .pf-card { background: white; border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border-light); transition: all .3s; }
+    .pf-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+    .pf-img { position: relative; overflow: hidden; aspect-ratio: 16/10; }
+    .pf-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s; }
+    .pf-card:hover .pf-img img { transform: scale(1.06); }
+    .pf-img-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(26,26,46,.8), transparent); display: flex; align-items: flex-end; padding: 1rem; opacity: 0; transition: opacity .3s; }
+    .pf-card:hover .pf-img-overlay { opacity: 1; }
+    .pf-body { padding: 1.5rem; }
+    .pf-cat { font-size: .75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--secondary); margin-bottom: .4rem; }
+    .pf-title { font-family: 'Playfair Display', serif; font-size: 1.2rem; color: var(--primary); margin-bottom: .4rem; }
+    .pf-desc { font-size: .9rem; color: var(--text-secondary); margin-bottom: 1rem; }
+    .pf-tags { display: flex; gap: .5rem; flex-wrap: wrap; }
+    .pf-tag { font-size: .75rem; padding: .25rem .7rem; background: var(--surface); border-radius: 100px; color: var(--text-secondary); font-weight: 500; }
+    .lightbox { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.9); z-index: 9999; align-items: center; justify-content: center; padding: 2rem; }
+    .lightbox.open { display: flex; flex-direction: column; }
+    .lightbox img { max-width: 900px; max-height: 70vh; width: 100%; object-fit: contain; border-radius: 12px; }
+    .lightbox-info { color: white; text-align: center; margin-top: 1.5rem; max-width: 600px; }
+    .lightbox-close { position: absolute; top: 1rem; right: 1rem; background: none; border: none; color: white; font-size: 1.5rem; cursor: pointer; padding: .5rem; }
+  </style>
 </head>
-<body class="bg-background text-text-primary">
-    <!-- Navigation Header -->
-    <nav class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm shadow-base z-50" id="navbar">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <!-- Logo -->
-                <div class="flex-shrink-0">
-                    <a href="homepage.html" class="flex items-center space-x-2">
-                        <div class="w-10 h-10 flex items-center justify-center">
-                            <img src="THE-ADMIN-MEDIA-CONCEPT-NEW-LOGO - Copy.png" alt="">
-                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-                        </div>
-                        <span class="font-heading font-bold text-xl text-primary">The Admin Media Concept</span>
-                    </a>
-                </div>
+<body>
 
-                <!-- Desktop Navigation -->
-                <div class="hidden md:block">
-                    <div class="ml-10 flex items-baseline space-x-8">
-                        <a href="homepage.html" class="text-text-secondary hover:text-primary px-3 py-2 rounded-md text-sm transition-colors">Home</a>
-                        <a href="about.html" class="text-text-secondary hover:text-primary px-3 py-2 rounded-md text-sm transition-colors">About</a>
-                        <a href="services.html" class="text-text-secondary hover:text-primary px-3 py-2 rounded-md text-sm transition-colors">Services</a>
-                        <a href="portfolio.html" class="text-primary font-medium px-3 py-2 rounded-md text-sm hover:bg-primary-50 transition-colors">Portfolio</a>
-                        <a href="contact.html" class="text-text-secondary hover:text-primary px-3 py-2 rounded-md text-sm transition-colors">Contact</a>
-                    </div>
-                </div>
+<div id="nav-placeholder"></div>
 
-                <!-- Mobile menu button -->
-                <div class="md:hidden">
-                    <button type="button" class="text-text-secondary hover:text-primary focus:outline-none focus:text-primary" id="mobile-menu-button">
-                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-                        </svg>
-                    </button>
-                </div>
-            </div>
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero-pattern"></div>
+  <div class="breadcrumb">
+    <a href="homepage.html"><i class="fas fa-home"></i> Home</a>
+    <i class="fas fa-chevron-right" style="font-size:.7rem;"></i>
+    <span>Portfolio</span>
+  </div>
+  <h1>Our Creative Portfolio</h1>
+  <p>Explore our diverse portfolio of successful projects that showcase our creativity, technical expertise, and passion for design.</p>
+</section>
+
+<!-- FILTER -->
+<div class="sticky-filter">
+  <div class="filter-bar">
+    <button class="filter-btn active" data-filter="all">All Projects</button>
+    <button class="filter-btn" data-filter="creative">Creative Design</button>
+    <button class="filter-btn" data-filter="web">Web & Tech</button>
+    <button class="filter-btn" data-filter="media">Media</button>
+    <button class="filter-btn" data-filter="marketing">Marketing</button>
+  </div>
+</div>
+
+<!-- PORTFOLIO GRID -->
+<section class="section">
+  <div class="section-inner">
+    <div class="portfolio-full" id="portfolioGrid">
+
+      <div class="pf-card reveal" data-cat="creative">
+        <div class="pf-img" onclick="openLightbox('https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=900','Brand Identity Design','Complete brand identity for tech startup including logo, colors, typography and guidelines.')">
+          <img src="https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Brand Identity Design" />
+          <div class="pf-img-overlay">
+            <span style="color:white;font-size:.85rem;"><i class="fas fa-expand-alt"></i> View Fullscreen</span>
+          </div>
         </div>
-
-        <!-- Mobile Navigation Menu -->
-        <div class="md:hidden hidden" id="mobile-menu">
-            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t border-border-light">
-                <a href="homepage.html" class="text-text-secondary hover:text-primary block px-3 py-2 rounded-md text-base font-medium transition-colors">Home</a>
-                <a href="about.html" class="text-text-secondary hover:text-primary block px-3 py-2 rounded-md text-base font-medium transition-colors">About</a>
-                <a href="services.html" class="text-text-secondary hover:text-primary block px-3 py-2 rounded-md text-base font-medium transition-colors">Services</a>
-                <a href="portfolio.html" class="text-primary block px-3 py-2 rounded-md text-base font-medium bg-primary-50">Portfolio</a>
-                <a href="contact.html" class="text-text-secondary hover:text-primary block px-3 py-2 rounded-md text-base font-medium transition-colors">Contact</a>
-            </div>
+        <div class="pf-body">
+          <div class="pf-cat">Creative Design</div>
+          <div class="pf-title">Brand Identity Design</div>
+          <div class="pf-desc">Complete brand identity for tech startup including logo, color palette, typography and brand guidelines.</div>
+          <div class="pf-tags"><span class="pf-tag">Logo</span><span class="pf-tag">Branding</span><span class="pf-tag">Typography</span></div>
         </div>
-    </nav>
+      </div>
 
-    <!-- Breadcrumb -->
-    <section class="pt-20 pb-8 bg-surface">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <nav class="flex" aria-label="Breadcrumb">
-                <ol class="flex items-center space-x-2">
-                    <li>
-                        <a href="homepage.html" class="text-text-secondary hover:text-primary transition-colors">
-                            <i class="fas fa-home mr-1"></i>
-                            Home
-                        </a>
-                    </li>
-                    <li>
-                        <svg class="w-4 h-4 text-text-secondary mx-2" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
-                        </svg>
-                    </li>
-                    <li>
-                        <span class="text-primary font-medium">Portfolio</span>
-                    </li>
-                </ol>
-            </nav>
+      <div class="pf-card reveal" data-cat="web">
+        <div class="pf-img" onclick="openLightbox('https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=900','E-commerce Website','Modern online store with payment integration and inventory management.')">
+          <img src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=600" alt="E-commerce Website" />
+          <div class="pf-img-overlay">
+            <span style="color:white;font-size:.85rem;"><i class="fas fa-expand-alt"></i> View Fullscreen</span>
+          </div>
         </div>
-    </section>
-
-    <!-- Portfolio Header -->
-    <section class="py-16 bg-background">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 class="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-primary mb-6">
-                Our Creative Portfolio
-            </h1>
-            <p class="text-lg md:text-xl text-text-secondary max-w-3xl mx-auto mb-8">
-                Explore our diverse collection of successful projects that showcase our expertise in graphic design, web development, and media production. Each project represents our commitment to excellence and creativity.
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <div class="flex items-center text-text-secondary">
-                    <i class="fas fa-project-diagram mr-2 text-secondary"></i>
-                    <span>150+ Projects Completed</span>
-                </div>
-                <div class="flex items-center text-text-secondary">
-                    <i class="fas fa-users mr-2 text-secondary"></i>
-                    <span>80+ Happy Clients</span>
-                </div>
-                <div class="flex items-center text-text-secondary">
-                    <i class="fas fa-award mr-2 text-secondary"></i>
-                    <span>5+ Years Experience</span>
-                </div>
-            </div>
+        <div class="pf-body">
+          <div class="pf-cat">Web Development</div>
+          <div class="pf-title">E-commerce Website</div>
+          <div class="pf-desc">Modern online store with payment integration, inventory management, and mobile-responsive design.</div>
+          <div class="pf-tags"><span class="pf-tag">Web Dev</span><span class="pf-tag">E-commerce</span><span class="pf-tag">UI/UX</span></div>
         </div>
-    </section>
+      </div>
 
-    <!-- Category Filter -->
-    <section class="py-8 bg-surface sticky top-16 z-40">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <!-- Desktop Filter Tabs -->
-            <div class="hidden md:flex justify-center space-x-1 bg-white rounded-lg p-1 shadow-base max-w-2xl mx-auto">
-                <button class="filter-tab active px-6 py-3 rounded-md font-medium transition-all duration-200" data-filter="all">
-                    All Projects
-                </button>
-                <button class="filter-tab px-6 py-3 rounded-md font-medium transition-all duration-200" data-filter="graphic-design">
-                    Graphic Design
-                </button>
-                <button class="filter-tab px-6 py-3 rounded-md font-medium transition-all duration-200" data-filter="web-development">
-                    Web Development
-                </button>
-                <button class="filter-tab px-6 py-3 rounded-md font-medium transition-all duration-200" data-filter="media-production">
-                    Media Production
-                </button>
-            </div>
-
-            <!-- Mobile Filter Chips -->
-            <div class="md:hidden">
-                <div class="flex space-x-3 overflow-x-auto pb-2 scrollbar-hide">
-                    <button class="filter-chip active flex-shrink-0 px-4 py-2 rounded-full text-sm font-medium transition-all duration-200" data-filter="all">
-                        All Projects
-                    </button>
-                    <button class="filter-chip flex-shrink-0 px-4 py-2 rounded-full text-sm font-medium transition-all duration-200" data-filter="graphic-design">
-                        Graphic Design
-                    </button>
-                    <button class="filter-chip flex-shrink-0 px-4 py-2 rounded-full text-sm font-medium transition-all duration-200" data-filter="web-development">
-                        Web Development
-                    </button>
-                    <button class="filter-chip flex-shrink-0 px-4 py-2 rounded-full text-sm font-medium transition-all duration-200" data-filter="media-production">
-                        Media Production
-                    </button>
-                </div>
-            </div>
-
-            <!-- Advanced Filters -->
-            <div class="mt-6 flex flex-wrap gap-4 justify-center">
-                <select id="industry-filter" class="px-4 py-2 border border-border rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-primary-500">
-                    <option value>All Industries</option>
-                    <option value="technology">Technology</option>
-                    <option value="healthcare">Healthcare</option>
-                    <option value="education">Education</option>
-                    <option value="retail">Retail</option>
-                    <option value="hospitality">Hospitality</option>
-                </select>
-                <select id="date-filter" class="px-4 py-2 border border-border rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-primary-500">
-                    <option value>All Time</option>
-                    <option value="2025">2025</option>
-                    <option value="2024">2024</option>
-                    <option value="2023">2023</option>
-                </select>
-                <button id="reset-filters" class="px-4 py-2 text-text-secondary hover:text-primary transition-colors">
-                    <i class="fas fa-undo mr-1"></i>
-                    Reset Filters
-                </button>
-            </div>
+      <div class="pf-card reveal" data-cat="web">
+        <div class="pf-img" onclick="openLightbox('https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=900','Mobile App UI','Intuitive fitness tracking application with clean UI/UX design.')">
+          <img src="https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Mobile App UI" />
+          <div class="pf-img-overlay">
+            <span style="color:white;font-size:.85rem;"><i class="fas fa-expand-alt"></i> View Fullscreen</span>
+          </div>
         </div>
-    </section>
-
-    <!-- Featured Projects -->
-    <section class="py-12 bg-background">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-2xl md:text-3xl font-heading font-bold text-primary mb-8 text-center">Featured Projects</h2>
-            
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
-                <!-- Featured Project 1 -->
-                <div class="project-card featured graphic-design technology group cursor-pointer" data-project="1">
-                    <div class="relative overflow-hidden rounded-lg shadow-lg">
-                        <img src="https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg" alt="TechStart Brand Identity" class="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
-                        <div class="absolute inset-0 bg-primary/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                            <div class="text-center text-white p-6">
-                                <h3 class="text-2xl font-heading font-bold mb-2">TechStart Brand Identity</h3>
-                                <p class="text-sm mb-4">Complete brand identity design for innovative tech startup</p>
-                                <div class="flex justify-center space-x-4 mb-4">
-                                    <span class="bg-secondary px-3 py-1 rounded-full text-xs">Logo Design</span>
-                                    <span class="bg-secondary px-3 py-1 rounded-full text-xs">Brand Guidelines</span>
-                                </div>
-                                <button class="bg-white text-primary px-6 py-2 rounded-lg font-medium hover:bg-gray-100 transition-colors">
-                                    View Details
-                                </button>
-                            </div>
-                        </div>
-                        <div class="absolute top-4 left-4">
-                            <span class="bg-secondary text-white px-3 py-1 rounded-full text-xs font-medium">Featured</span>
-                        </div>
-                    </div>
-                    <div class="p-6 bg-white rounded-b-lg">
-                        <h3 class="text-xl font-heading font-semibold text-primary mb-2">TechStart Brand Identity</h3>
-                        <p class="text-text-secondary mb-3">Sarah Johnson - TechStart Inc.</p>
-                        <p class="text-sm text-text-secondary mb-4">A comprehensive brand identity project that transformed a tech startup's visual presence with modern design principles and strategic brand positioning.</p>
-                        <div class="flex items-center justify-between">
-                            <div class="flex items-center text-sm text-text-secondary">
-                                <i class="fas fa-calendar mr-1"></i>
-                                <span>3 months</span>
-                            </div>
-                            <div class="flex items-center text-sm text-text-secondary">
-                                <i class="fas fa-tag mr-1"></i>
-                                <span>Technology</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Featured Project 2 -->
-                <div class="project-card featured web-development retail group cursor-pointer" data-project="2">
-                    <div class="relative overflow-hidden rounded-lg shadow-lg">
-                        <img src="https://images.unsplash.com/photo-1611224923853-80b023f02d71" alt="RetailHub E-commerce Platform" class="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
-                        <div class="absolute inset-0 bg-primary/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                            <div class="text-center text-white p-6">
-                                <h3 class="text-2xl font-heading font-bold mb-2">RetailHub E-commerce</h3>
-                                <p class="text-sm mb-4">Modern e-commerce platform with advanced features</p>
-                                <div class="flex justify-center space-x-4 mb-4">
-                                    <span class="bg-secondary px-3 py-1 rounded-full text-xs">React</span>
-                                    <span class="bg-secondary px-3 py-1 rounded-full text-xs">Node.js</span>
-                                </div>
-                                <button class="bg-white text-primary px-6 py-2 rounded-lg font-medium hover:bg-gray-100 transition-colors">
-                                    View Details
-                                </button>
-                            </div>
-                        </div>
-                        <div class="absolute top-4 left-4">
-                            <span class="bg-secondary text-white px-3 py-1 rounded-full text-xs font-medium">Featured</span>
-                        </div>
-                    </div>
-                    <div class="p-6 bg-white rounded-b-lg">
-                        <h3 class="text-xl font-heading font-semibold text-primary mb-2">RetailHub E-commerce Platform</h3>
-                        <p class="text-text-secondary mb-3">Michael Chen - RetailHub</p>
-                        <p class="text-sm text-text-secondary mb-4">A full-featured e-commerce platform with payment integration, inventory management, and advanced analytics dashboard.</p>
-                        <div class="flex items-center justify-between">
-                            <div class="flex items-center text-sm text-text-secondary">
-                                <i class="fas fa-calendar mr-1"></i>
-                                <span>4 months</span>
-                            </div>
-                            <div class="flex items-center text-sm text-text-secondary">
-                                <i class="fas fa-tag mr-1"></i>
-                                <span>Retail</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="pf-body">
+          <div class="pf-cat">Mobile Design</div>
+          <div class="pf-title">Mobile App UI</div>
+          <div class="pf-desc">Intuitive fitness tracking application with clean UI/UX design optimized for iOS and Android.</div>
+          <div class="pf-tags"><span class="pf-tag">Mobile App</span><span class="pf-tag">UI/UX</span><span class="pf-tag">Prototype</span></div>
         </div>
-    </section>
+      </div>
 
-    <!-- Portfolio Grid -->
-    <section class="py-12 bg-surface">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div id="portfolio-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                <!-- Project 1 -->
-                <div class="project-card graphic-design healthcare group cursor-pointer" data-project="3">
-                    <div class="relative overflow-hidden rounded-lg shadow-base hover:shadow-lg transition-all duration-300">
-                        <img src="https://images.pixabay.com/photo/2016/11/29/06/15/plans-1867745_1280.jpg" alt="HealthCare Plus Logo" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
-                        <div class="absolute inset-0 bg-primary/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                            <button class="bg-white text-primary px-4 py-2 rounded-lg font-medium hover:bg-gray-100 transition-colors">
-                                View Details
-                            </button>
-                        </div>
-                    </div>
-                    <div class="p-4 bg-white rounded-b-lg">
-                        <h3 class="font-heading font-semibold text-primary mb-1">HealthCare Plus Logo</h3>
-                        <p class="text-sm text-text-secondary mb-2">Dr. Amanda Wilson</p>
-                        <p class="text-xs text-text-secondary">Professional medical logo design</p>
-                    </div>
-                </div>
-
-                <!-- Project 2 -->
-                <div class="project-card web-development education group cursor-pointer" data-project="4">
-                    <div class="relative overflow-hidden rounded-lg shadow-base hover:shadow-lg transition-all duration-300">
-                        <img src="https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg" alt="EduLearn Platform" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
-                        <div class="absolute inset-0 bg-primary/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                            <button class="bg-white text-primary px-4 py-2 rounded-lg font-medium hover:bg-gray-100 transition-colors">
-                                View Details
-                            </button>
-                        </div>
-                    </div>
-                    <div class="p-4 bg-white rounded-b-lg">
-                        <h3 class="font-heading font-semibold text-primary mb-1">EduLearn Platform</h3>
-                        <p class="text-sm text-text-secondary mb-2">Prof. James Miller</p>
-                        <p class="text-xs text-text-secondary">Online learning management system</p>
-                    </div>
-                </div>
-
-                <!-- Project 3 -->
-                <div class="project-card media-production hospitality group cursor-pointer" data-project="5">
-                    <div class="relative overflow-hidden rounded-lg shadow-base hover:shadow-lg transition-all duration-300">
-                        <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3" alt="Restaurant Promo Video" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
-                        <div class="absolute inset-0 bg-primary/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                            <button class="bg-white text-primary px-4 py-2 rounded-lg font-medium hover:bg-gray-100 transition-colors">
-                                View Details
-                            </button>
-                        </div>
-                        <div class="absolute top-2 right-2">
-                            <i class="fas fa-play-circle text-white text-2xl"></i>
-                        </div>
-                    </div>
-                    <div class="p-4 bg-white rounded-b-lg">
-                        <h3 class="font-heading font-semibold text-primary mb-1">Restaurant Promo Video</h3>
-                        <p class="text-sm text-text-secondary mb-2">Maria Rodriguez</p>
-                        <p class="text-xs text-text-secondary">Promotional video production</p>
-                    </div>
-                </div>
-
-                <!-- Project 4 -->
-                <div class="project-card graphic-design technology group cursor-pointer" data-project="6">
-                    <div class="relative overflow-hidden rounded-lg shadow-base hover:shadow-lg transition-all duration-300">
-                        <img src="https://images.pixabay.com/photo/2015/02/05/08/21/books-623163_1280.jpg" alt="Tech Conference Branding" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
-                        <div class="absolute inset-0 bg-primary/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                            <button class="bg-white text-primary px-4 py-2 rounded-lg font-medium hover:bg-gray-100 transition-colors">
-                                View Details
-                            </button>
-                        </div>
-                    </div>
-                    <div class="p-4 bg-white rounded-b-lg">
-                        <h3 class="font-heading font-semibold text-primary mb-1">Tech Conference Branding</h3>
-                        <p class="text-sm text-text-secondary mb-2">David Kim</p>
-                        <p class="text-xs text-text-secondary">Complete event branding package</p>
-                    </div>
-                </div>
-
-                <!-- Project 5 -->
-                <div class="project-card web-development healthcare group cursor-pointer" data-project="7">
-                    <div class="relative overflow-hidden rounded-lg shadow-base hover:shadow-lg transition-all duration-300">
-                        <img src="https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg" alt="Medical Practice Website" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
-                        <div class="absolute inset-0 bg-primary/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                            <button class="bg-white text-primary px-4 py-2 rounded-lg font-medium hover:bg-gray-100 transition-colors">
-                                View Details
-                            </button>
-                        </div>
-                    </div>
-                    <div class="p-4 bg-white rounded-b-lg">
-                        <h3 class="font-heading font-semibold text-primary mb-1">Medical Practice Website</h3>
-                        <p class="text-sm text-text-secondary mb-2">Dr. Lisa Thompson</p>
-                        <p class="text-xs text-text-secondary">Professional medical website</p>
-                    </div>
-                </div>
-
-                <!-- Project 6 -->
-                <div class="project-card media-production retail group cursor-pointer" data-project="8">
-                    <div class="relative overflow-hidden rounded-lg shadow-base hover:shadow-lg transition-all duration-300">
-                        <img src="https://images.pixabay.com/photo/2017/01/29/13/21/mobile-marketing-2016548_1280.jpg" alt="Fashion Brand Campaign" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
-                        <div class="absolute inset-0 bg-primary/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                            <button class="bg-white text-primary px-4 py-2 rounded-lg font-medium hover:bg-gray-100 transition-colors">
-                                View Details
-                            </button>
-                        </div>
-                    </div>
-                    <div class="p-4 bg-white rounded-b-lg">
-                        <h3 class="font-heading font-semibold text-primary mb-1">Fashion Brand Campaign</h3>
-                        <p class="text-sm text-text-secondary mb-2">Sophie Laurent</p>
-                        <p class="text-xs text-text-secondary">Social media campaign design</p>
-                    </div>
-                </div>
-
-                <!-- Project 7 -->
-                <div class="project-card graphic-design education group cursor-pointer" data-project="9">
-                    <div class="relative overflow-hidden rounded-lg shadow-base hover:shadow-lg transition-all duration-300">
-                        <img src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg" alt="University Brochure" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
-                        <div class="absolute inset-0 bg-primary/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                            <button class="bg-white text-primary px-4 py-2 rounded-lg font-medium hover:bg-gray-100 transition-colors">
-                                View Details
-                            </button>
-                        </div>
-                    </div>
-                    <div class="p-4 bg-white rounded-b-lg">
-                        <h3 class="font-heading font-semibold text-primary mb-1">University Brochure</h3>
-                        <p class="text-sm text-text-secondary mb-2">Prof. Robert Davis</p>
-                        <p class="text-xs text-text-secondary">Educational marketing materials</p>
-                    </div>
-                </div>
-
-                <!-- Project 8 -->
-                <div class="project-card web-development technology group cursor-pointer" data-project="10">
-                    <div class="relative overflow-hidden rounded-lg shadow-base hover:shadow-lg transition-all duration-300">
-                        <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786" alt="SaaS Dashboard" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
-                        <div class="absolute inset-0 bg-primary/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                            <button class="bg-white text-primary px-4 py-2 rounded-lg font-medium hover:bg-gray-100 transition-colors">
-                                View Details
-                            </button>
-                        </div>
-                    </div>
-                    <div class="p-4 bg-white rounded-b-lg">
-                        <h3 class="font-heading font-semibold text-primary mb-1">SaaS Dashboard</h3>
-                        <p class="text-sm text-text-secondary mb-2">Alex Johnson</p>
-                        <p class="text-xs text-text-secondary">Analytics dashboard interface</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Load More Button -->
-            <div class="text-center mt-12">
-                <button id="load-more-btn" class="btn-primary px-8 py-3 text-lg">
-                    <i class="fas fa-plus mr-2"></i>
-                    Load More Projects
-                </button>
-            </div>
+      <div class="pf-card reveal" data-cat="marketing">
+        <div class="pf-img" onclick="openLightbox('https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=900','Marketing Campaign','Social media campaign for restaurant chain resulting in 300% engagement increase.')">
+          <img src="https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Marketing Campaign" />
+          <div class="pf-img-overlay">
+            <span style="color:white;font-size:.85rem;"><i class="fas fa-expand-alt"></i> View Fullscreen</span>
+          </div>
         </div>
-    </section>
-
-    <!-- Project Modal -->
-    <div id="project-modal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden">
-        <div class="flex items-center justify-center min-h-screen p-4">
-            <div class="bg-white rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto">
-                <!-- Modal Header -->
-                <div class="flex items-center justify-between p-6 border-b border-border-light">
-                    <h2 id="modal-title" class="text-2xl font-heading font-bold text-primary">Project Title</h2>
-                    <div class="flex items-center space-x-4">
-                        <!-- Navigation Arrows -->
-                        <button id="prev-project" class="p-2 text-text-secondary hover:text-primary transition-colors">
-                            <i class="fas fa-chevron-left"></i>
-                        </button>
-                        <button id="next-project" class="p-2 text-text-secondary hover:text-primary transition-colors">
-                            <i class="fas fa-chevron-right"></i>
-                        </button>
-                        <!-- Close Button -->
-                        <button id="close-modal" class="p-2 text-text-secondary hover:text-primary transition-colors">
-                            <i class="fas fa-times"></i>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Modal Content -->
-                <div class="p-6">
-                    <!-- Project Gallery -->
-                    <div class="mb-8">
-                        <div id="modal-gallery" class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-                            <!-- Images will be dynamically inserted here -->
-                        </div>
-                        <div class="flex justify-center space-x-2" id="gallery-dots">
-                            <!-- Dots will be dynamically inserted here -->
-                        </div>
-                    </div>
-
-                    <!-- Project Details -->
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <div>
-                            <h3 class="text-xl font-heading font-semibold text-primary mb-4">Project Overview</h3>
-                            <div class="space-y-3">
-                                <div class="flex items-center">
-                                    <i class="fas fa-user mr-3 text-secondary w-5"></i>
-                                    <span class="text-text-secondary">Client: <span id="modal-client" class="text-text-primary font-medium">Client Name</span></span>
-                                </div>
-                                <div class="flex items-center">
-                                    <i class="fas fa-calendar mr-3 text-secondary w-5"></i>
-                                    <span class="text-text-secondary">Duration: <span id="modal-duration" class="text-text-primary font-medium">3 months</span></span>
-                                </div>
-                                <div class="flex items-center">
-                                    <i class="fas fa-tag mr-3 text-secondary w-5"></i>
-                                    <span class="text-text-secondary">Industry: <span id="modal-industry" class="text-text-primary font-medium">Technology</span></span>
-                                </div>
-                                <div class="flex items-center">
-                                    <i class="fas fa-cogs mr-3 text-secondary w-5"></i>
-                                    <span class="text-text-secondary">Category: <span id="modal-category" class="text-text-primary font-medium">Graphic Design</span></span>
-                                </div>
-                            </div>
-
-                            <h4 class="text-lg font-heading font-semibold text-primary mt-6 mb-3">Technologies Used</h4>
-                            <div id="modal-technologies" class="flex flex-wrap gap-2">
-                                <!-- Technology tags will be dynamically inserted here -->
-                            </div>
-                        </div>
-
-                        <div>
-                            <h3 class="text-xl font-heading font-semibold text-primary mb-4">Project Description</h3>
-                            <p id="modal-description" class="text-text-secondary mb-6">
-                                Project description will be dynamically inserted here.
-                            </p>
-
-                            <h4 class="text-lg font-heading font-semibold text-primary mb-3">Key Features</h4>
-                            <ul id="modal-features" class="space-y-2 text-text-secondary">
-                                <!-- Features will be dynamically inserted here -->
-                            </ul>
-
-                            <h4 class="text-lg font-heading font-semibold text-primary mt-6 mb-3">Results Achieved</h4>
-                            <ul id="modal-results" class="space-y-2 text-text-secondary">
-                                <!-- Results will be dynamically inserted here -->
-                            </ul>
-                        </div>
-                    </div>
-
-                    <!-- Social Sharing -->
-                    <div class="mt-8 pt-6 border-t border-border-light">
-                        <h4 class="text-lg font-heading font-semibold text-primary mb-4">Share This Project</h4>
-                        <div class="flex space-x-4">
-                            <button class="flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
-                                <i class="fab fa-facebook-f mr-2"></i>
-                                Facebook
-                            </button>
-                            <button class="flex items-center px-4 py-2 bg-blue-400 text-white rounded-lg hover:bg-blue-500 transition-colors">
-                                <i class="fab fa-twitter mr-2"></i>
-                                Twitter
-                            </button>
-                            <button class="flex items-center px-4 py-2 bg-blue-700 text-white rounded-lg hover:bg-blue-800 transition-colors">
-                                <i class="fab fa-linkedin-in mr-2"></i>
-                                LinkedIn
-                            </button>
-                            <button class="flex items-center px-4 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition-colors">
-                                <i class="fas fa-link mr-2"></i>
-                                Copy Link
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="pf-body">
+          <div class="pf-cat">Digital Marketing</div>
+          <div class="pf-title">Marketing Campaign</div>
+          <div class="pf-desc">Social media campaign for restaurant chain resulting in 300% engagement increase and boosted sales.</div>
+          <div class="pf-tags"><span class="pf-tag">Social Media</span><span class="pf-tag">Ads</span><span class="pf-tag">Strategy</span></div>
         </div>
+      </div>
+
+      <div class="pf-card reveal" data-cat="creative">
+        <div class="pf-img" onclick="openLightbox('https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=900','Print Materials','Corporate brochure and business cards for professional services firm.')">
+          <img src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Print Materials" />
+          <div class="pf-img-overlay">
+            <span style="color:white;font-size:.85rem;"><i class="fas fa-expand-alt"></i> View Fullscreen</span>
+          </div>
+        </div>
+        <div class="pf-body">
+          <div class="pf-cat">Creative Design</div>
+          <div class="pf-title">Print Materials</div>
+          <div class="pf-desc">Corporate brochure and business cards for a professional services firm in Lagos, Nigeria.</div>
+          <div class="pf-tags"><span class="pf-tag">Print</span><span class="pf-tag">Brochure</span><span class="pf-tag">Business Cards</span></div>
+        </div>
+      </div>
+
+      <div class="pf-card reveal" data-cat="media">
+        <div class="pf-img" onclick="openLightbox('https://images.pexels.com/photos/1714208/pexels-photo-1714208.jpeg?auto=compress&cs=tinysrgb&w=900','Video Production','Corporate promotional video for a leading Nigerian real estate company.')">
+          <img src="https://images.pexels.com/photos/1714208/pexels-photo-1714208.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Video Production" />
+          <div class="pf-img-overlay">
+            <span style="color:white;font-size:.85rem;"><i class="fas fa-expand-alt"></i> View Fullscreen</span>
+          </div>
+        </div>
+        <div class="pf-body">
+          <div class="pf-cat">Video Production</div>
+          <div class="pf-title">Corporate Promo Video</div>
+          <div class="pf-desc">Corporate promotional video for a leading Nigerian real estate company, including scripting and editing.</div>
+          <div class="pf-tags"><span class="pf-tag">Video</span><span class="pf-tag">Editing</span><span class="pf-tag">Motion Graphics</span></div>
+        </div>
+      </div>
+
+      <div class="pf-card reveal" data-cat="creative">
+        <div class="pf-img" onclick="openLightbox('https://images.pexels.com/photos/762687/pexels-photo-762687.jpeg?auto=compress&cs=tinysrgb&w=900','Book Cover Design','Fiction novel cover design for self-published Nigerian author.')">
+          <img src="https://images.pexels.com/photos/762687/pexels-photo-762687.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Book Cover Design" />
+          <div class="pf-img-overlay">
+            <span style="color:white;font-size:.85rem;"><i class="fas fa-expand-alt"></i> View Fullscreen</span>
+          </div>
+        </div>
+        <div class="pf-body">
+          <div class="pf-cat">Creative Design</div>
+          <div class="pf-title">Book Cover Design</div>
+          <div class="pf-desc">Eye-catching book cover design for a self-published Nigerian fiction author's debut novel.</div>
+          <div class="pf-tags"><span class="pf-tag">Book Cover</span><span class="pf-tag">Illustration</span><span class="pf-tag">Typography</span></div>
+        </div>
+      </div>
+
+      <div class="pf-card reveal" data-cat="creative">
+        <div class="pf-img" onclick="openLightbox('https://images.pexels.com/photos/1779487/pexels-photo-1779487.jpeg?auto=compress&cs=tinysrgb&w=900','Logo Collection','Various logo designs for businesses across different industries.')">
+          <img src="https://images.pexels.com/photos/1779487/pexels-photo-1779487.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Logo Collection" />
+          <div class="pf-img-overlay">
+            <span style="color:white;font-size:.85rem;"><i class="fas fa-expand-alt"></i> View Fullscreen</span>
+          </div>
+        </div>
+        <div class="pf-body">
+          <div class="pf-cat">Creative Design</div>
+          <div class="pf-title">Logo Collection</div>
+          <div class="pf-desc">Various logo designs for businesses across different industries including tech, food, fashion and more.</div>
+          <div class="pf-tags"><span class="pf-tag">Logo</span><span class="pf-tag">Identity</span><span class="pf-tag">Vector</span></div>
+        </div>
+      </div>
+
+      <div class="pf-card reveal" data-cat="marketing">
+        <div class="pf-img" onclick="openLightbox('https://images.pexels.com/photos/3184632/pexels-photo-3184632.jpeg?auto=compress&cs=tinysrgb&w=900','Social Media Content','Monthly social media content creation and management for fintech startup.')">
+          <img src="https://images.pexels.com/photos/3184632/pexels-photo-3184632.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Social Media Content" />
+          <div class="pf-img-overlay">
+            <span style="color:white;font-size:.85rem;"><i class="fas fa-expand-alt"></i> View Fullscreen</span>
+          </div>
+        </div>
+        <div class="pf-body">
+          <div class="pf-cat">Social Media</div>
+          <div class="pf-title">Social Media Content</div>
+          <div class="pf-desc">Monthly social media content creation and management for a fast-growing fintech startup in Nigeria.</div>
+          <div class="pf-tags"><span class="pf-tag">Social Media</span><span class="pf-tag">Content</span><span class="pf-tag">Strategy</span></div>
+        </div>
+      </div>
+
+      <div class="pf-card reveal" data-cat="web">
+        <div class="pf-img" onclick="openLightbox('https://images.pexels.com/photos/3182765/pexels-photo-3182765.jpeg?auto=compress&cs=tinysrgb&w=900','Portfolio Website','Creative portfolio website for a professional photographer.')">
+          <img src="https://images.pexels.com/photos/3182765/pexels-photo-3182765.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Portfolio Website" />
+          <div class="pf-img-overlay">
+            <span style="color:white;font-size:.85rem;"><i class="fas fa-expand-alt"></i> View Fullscreen</span>
+          </div>
+        </div>
+        <div class="pf-body">
+          <div class="pf-cat">Web Development</div>
+          <div class="pf-title">Portfolio Website</div>
+          <div class="pf-desc">Creative and elegant portfolio website for a professional photographer showcasing their work beautifully.</div>
+          <div class="pf-tags"><span class="pf-tag">Web Dev</span><span class="pf-tag">Gallery</span><span class="pf-tag">CMS</span></div>
+        </div>
+      </div>
+
+      <div class="pf-card reveal" data-cat="media">
+        <div class="pf-img" onclick="openLightbox('https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg?auto=compress&cs=tinysrgb&w=900','Photography Session','Product photography session for a local clothing brand.')">
+          <img src="https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Photography Session" />
+          <div class="pf-img-overlay">
+            <span style="color:white;font-size:.85rem;"><i class="fas fa-expand-alt"></i> View Fullscreen</span>
+          </div>
+        </div>
+        <div class="pf-body">
+          <div class="pf-cat">Photography</div>
+          <div class="pf-title">Product Photography</div>
+          <div class="pf-desc">Professional product photography session for a local clothing brand seeking an online presence boost.</div>
+          <div class="pf-tags"><span class="pf-tag">Photography</span><span class="pf-tag">Product</span><span class="pf-tag">Editing</span></div>
+        </div>
+      </div>
+
+      <div class="pf-card reveal" data-cat="creative">
+        <div class="pf-img" onclick="openLightbox('https://images.pexels.com/photos/590020/pexels-photo-590020.jpeg?auto=compress&cs=tinysrgb&w=900','Event Flyer Design','Eye-catching event flyer designs for concerts and community events.')">
+          <img src="https://images.pexels.com/photos/590020/pexels-photo-590020.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Event Flyer Design" />
+          <div class="pf-img-overlay">
+            <span style="color:white;font-size:.85rem;"><i class="fas fa-expand-alt"></i> View Fullscreen</span>
+          </div>
+        </div>
+        <div class="pf-body">
+          <div class="pf-cat">Creative Design</div>
+          <div class="pf-title">Event Flyer Design</div>
+          <div class="pf-desc">Eye-catching event flyer and banner designs for concerts, community events, and business promotions.</div>
+          <div class="pf-tags"><span class="pf-tag">Flyer</span><span class="pf-tag">Event</span><span class="pf-tag">Print</span></div>
+        </div>
+      </div>
     </div>
+  </div>
+</section>
 
-    <!-- Call to Action Section -->
-    <section class="py-20 bg-primary text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl md:text-4xl font-heading font-bold mb-6">
-                Ready to Start Your Project?
-            </h2>
-            <p class="text-xl text-white/90 mb-8 max-w-3xl mx-auto">
-                Let's create something amazing together. Contact us today to discuss your project requirements and get a personalized quote.
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="contact.html" class="btn-secondary text-lg px-8 py-4">
-                    Get Started Today
-                </a>
-                <a href="services.html" class="bg-white/10 backdrop-blur-sm text-white border-2 border-white/30 px-8 py-4 rounded-lg font-semibold transition-all duration-300 hover:bg-white/20">
-                    View Our Services
-                </a>
-            </div>
-        </div>
-    </section>
+<!-- CTA -->
+<section class="cta-section">
+  <h2>Have a Project in Mind?</h2>
+  <p>Let's bring your vision to life. Contact us today and get a custom quote for your project.</p>
+  <div class="cta-btns">
+    <a href="contact.html" class="btn-primary"><i class="fas fa-rocket"></i> Start Your Project</a>
+    <a href="services.html" class="btn-outline"><i class="fas fa-list"></i> View Services & Pricing</a>
+  </div>
+</section>
 
-    <!-- Footer -->
-    <footer class="bg-primary text-white py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Company Info -->
-                <div class="lg:col-span-2">
-                    <div class="flex items-center space-x-2 mb-4">
-                    <div class="w-10 h-10 flex items-center justify-center">
-                            <img src="THE-ADMIN-MEDIA-CONCEPT-NEW-LOGO - Copy.png" alt="">
-                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-                        </div>
-                        <span class="font-heading font-bold text-xl">The Admin Media Concept</span>
-                    </div>
-                    <p class="text-white/80 mb-6 max-w-md">
-                        Your trusted partner for creative and digital solutions. We help businesses transform their brand presence and connect with their audience effectively.
-                    </p>
-                    <div class="flex space-x-4">
-                        <a href="https://web.facebook.com/profile.php?id=61577837131582" class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-white/20 transition-colors">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="https://x.com/AyomiOlowe" class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-white/20 transition-colors">
-                            <i class="fab fa-x"></i>
-                        </a>
-                        <a href="https://https://www.Instagram.com/theadmin001" class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-white/20 transition-colors">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="https://youtube.com/@theadminmediaconcept" class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-white/20 transition-colors">
-                            <i class="fab fa-youtube"></i>
-                        </a>
-                        <a href="https://www.tiktok.com/@admintech_" class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-white/20 transition-colors">
-                            <i class="fab fa-tiktok"></i>
-                        </a>
-                    </div>
-                </div>
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="if(event.target===this)closeLightbox()">
+  <button class="lightbox-close" onclick="closeLightbox()"><i class="fas fa-times"></i></button>
+  <img src="" id="lightboxImg" alt="" />
+  <div class="lightbox-info">
+    <h3 id="lightboxTitle" style="font-family:'Playfair Display',serif;margin-bottom:.5rem;"></h3>
+    <p id="lightboxDesc" style="color:rgba(255,255,255,.7);font-size:.9rem;"></p>
+  </div>
+</div>
 
-                <!-- Quick Links -->
-                <div>
-                    <h4 class="font-heading font-semibold text-lg mb-4">Quick Links</h4>
-                    <ul class="space-y-2">
-                        <li><a href="homepage.html" class="text-white/80 hover:text-white transition-colors">Home</a></li>
-                        <li><a href="about.html" class="text-white/80 hover:text-white transition-colors">About</a></li>
-                        <li><a href="services.html" class="text-white/80 hover:text-white transition-colors">Services</a></li>
-                        <li><a href="portfolio.html" class="text-white/80 hover:text-white transition-colors">Portfolio</a></li>
-                        <li><a href="contact.html" class="text-white/80 hover:text-white transition-colors">Contact</a></li>
-                    </ul>
-                </div>
+<div id="footer-placeholder"></div>
 
-                <!-- Contact Info -->
-                <div>
-                    <h4 class="font-heading font-semibold text-lg mb-4">Contact Info</h4>
-                    <ul class="space-y-2">
-                        <li class="flex items-center">
-                            <i class="fas fa-phone mr-2 text-secondary"></i>
-                            <a href="tel:+2348035543302" class="text-white/80 hover:text-white transition-colors">+234 803 554 3302</a>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-envelope mr-2 text-secondary"></i>
-                            <a href="mailto:tmediaconcept625@gmail.com" class="text-white/80 hover:text-white transition-colors">theadminmediagmail.com</a>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-map-marker-alt mr-2 text-secondary"></i>
-                            <span class="text-white/80">Ilesha, Nigeria</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+<script src="components.js"></script>
+<script>
+  initNav('portfolio');
 
-            <div class="border-t border-white/20 mt-8 pt-8 text-center">
-                <p class="text-white/80">
-                    © 2025 The Admin Media Concept. All Rights Reserved.
-                </p>
-            </div>
-        </div>
-    </footer>
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const f = btn.dataset.filter;
+      document.querySelectorAll('.pf-card').forEach(c => {
+        c.style.display = (f === 'all' || c.dataset.cat === f) ? 'block' : 'none';
+      });
+    });
+  });
 
-    <!-- JavaScript -->
-    <script>
-        // Mobile menu toggle
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        // Project data
-        const projectData = {
-            1: {
-                title: "TechStart Brand Identity",
-                client: "Sarah Johnson - TechStart Inc.",
-                duration: "3 months",
-                industry: "Technology",
-                category: "Graphic Design",
-                technologies: ["Adobe Illustrator", "Adobe Photoshop", "Figma"],
-                description: "A comprehensive brand identity project that transformed a tech startup's visual presence with modern design principles and strategic brand positioning. The project included logo design, color palette development, typography selection, and brand guidelines creation.",
-                features: [
-                    "Modern and scalable logo design",
-                    "Comprehensive brand guidelines",
-                    "Color palette and typography system",
-                    "Business card and letterhead design",
-                    "Social media templates"
-                ],
-                results: [
-                    "300% increase in brand recognition",
-                    "Improved customer trust and credibility",
-                    "Consistent brand presence across all platforms",
-                    "Successful funding round completion"
-                ],
-                images: [
-                    "https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg",
-                    "https://images.pixabay.com/photo/2016/11/29/06/15/plans-1867745_1280.jpg"
-                ]
-            },
-            2: {
-                title: "RetailHub E-commerce Platform",
-                client: "Michael Chen - RetailHub",
-                duration: "4 months",
-                industry: "Retail",
-                category: "Web Development",
-                technologies: ["React", "Node.js", "MongoDB", "Stripe API"],
-                description: "A full-featured e-commerce platform with payment integration, inventory management, and advanced analytics dashboard. The platform was built with modern web technologies to ensure scalability and performance.",
-                features: [
-                    "Responsive e-commerce website",
-                    "Payment gateway integration",
-                    "Inventory management system",
-                    "Analytics dashboard",
-                    "Mobile-optimized checkout"
-                ],
-                results: [
-                    "250% increase in online sales",
-                    "Reduced cart abandonment by 40%",
-                    "Improved user experience ratings",
-                    "Streamlined inventory management"
-                ],
-                images: [
-                    "https://images.unsplash.com/photo-1611224923853-80b023f02d71",
-                    "https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg"
-                ]
-            },
-            3: {
-                title: "HealthCare Plus Logo",
-                client: "Dr. Amanda Wilson",
-                duration: "2 weeks",
-                industry: "Healthcare",
-                category: "Graphic Design",
-                technologies: ["Adobe Illustrator", "Adobe Photoshop"],
-                description: "Professional medical logo design that conveys trust, care, and professionalism. The design incorporates medical symbols with modern aesthetics to create a memorable brand identity.",
-                features: [
-                    "Professional medical logo",
-                    "Multiple format variations",
-                    "Color and monochrome versions",
-                    "Usage guidelines"
-                ],
-                results: [
-                    "Enhanced professional image",
-                    "Improved patient trust",
-                    "Consistent brand recognition",
-                    "Positive patient feedback"
-                ],
-                images: [
-                    "https://images.pixabay.com/photo/2016/11/29/06/15/plans-1867745_1280.jpg"
-                ]
-            }
-        };
-
-        // Filter functionality
-        const filterTabs = document.querySelectorAll('.filter-tab');
-        const filterChips = document.querySelectorAll('.filter-chip');
-        const projectCards = document.querySelectorAll('.project-card');
-        const industryFilter = document.getElementById('industry-filter');
-        const dateFilter = document.getElementById('date-filter');
-        const resetFilters = document.getElementById('reset-filters');
-
-        // Desktop filter tabs
-        filterTabs.forEach(tab => {
-            tab.addEventListener('click', () => {
-                // Remove active class from all tabs
-                filterTabs.forEach(t => {
-                    t.classList.remove('active', 'bg-primary', 'text-white');
-                    t.classList.add('text-text-secondary', 'hover:text-primary');
-                });
-
-                // Add active class to clicked tab
-                tab.classList.add('active', 'bg-primary', 'text-white');
-                tab.classList.remove('text-text-secondary', 'hover:text-primary');
-
-                filterProjects(tab.getAttribute('data-filter'));
-            });
-        });
-
-        // Mobile filter chips
-        filterChips.forEach(chip => {
-            chip.addEventListener('click', () => {
-                // Remove active class from all chips
-                filterChips.forEach(c => {
-                    c.classList.remove('active', 'bg-primary', 'text-white');
-                    c.classList.add('bg-white', 'text-primary', 'border', 'border-primary');
-                });
-
-                // Add active class to clicked chip
-                chip.classList.add('active', 'bg-primary', 'text-white');
-                chip.classList.remove('bg-white', 'text-primary', 'border', 'border-primary');
-
-                filterProjects(chip.getAttribute('data-filter'));
-            });
-        });
-
-        // Filter projects function
-        function filterProjects(category) {
-            const industry = industryFilter.value;
-            const date = dateFilter.value;
-
-            projectCards.forEach(card => {
-                let showCard = true;
-
-                // Category filter
-                if (category !== 'all' && !card.classList.contains(category)) {
-                    showCard = false;
-                }
-
-                // Industry filter
-                if (industry && !card.classList.contains(industry)) {
-                    showCard = false;
-                }
-
-                // Show/hide card with animation
-                if (showCard) {
-                    card.style.display = 'block';
-                    card.style.animation = 'fadeIn 0.5s ease-in-out';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-        }
-
-        // Advanced filters
-        industryFilter.addEventListener('change', () => {
-            const activeFilter = document.querySelector('.filter-tab.active, .filter-chip.active');
-            if (activeFilter) {
-                filterProjects(activeFilter.getAttribute('data-filter'));
-            }
-        });
-
-        dateFilter.addEventListener('change', () => {
-            const activeFilter = document.querySelector('.filter-tab.active, .filter-chip.active');
-            if (activeFilter) {
-                filterProjects(activeFilter.getAttribute('data-filter'));
-            }
-        });
-
-        // Reset filters
-        resetFilters.addEventListener('click', () => {
-            // Reset filter buttons
-            filterTabs.forEach(tab => {
-                tab.classList.remove('active', 'bg-primary', 'text-white');
-                tab.classList.add('text-text-secondary', 'hover:text-primary');
-            });
-            filterChips.forEach(chip => {
-                chip.classList.remove('active', 'bg-primary', 'text-white');
-                chip.classList.add('bg-white', 'text-primary', 'border', 'border-primary');
-            });
-
-            // Set "All Projects" as active
-            const allTab = document.querySelector('[data-filter="all"].filter-tab');
-            const allChip = document.querySelector('[data-filter="all"].filter-chip');
-            if (allTab) {
-                allTab.classList.add('active', 'bg-primary', 'text-white');
-                allTab.classList.remove('text-text-secondary', 'hover:text-primary');
-            }
-            if (allChip) {
-                allChip.classList.add('active', 'bg-primary', 'text-white');
-                allChip.classList.remove('bg-white', 'text-primary', 'border', 'border-primary');
-            }
-
-            // Reset select filters
-            industryFilter.value = '';
-            dateFilter.value = '';
-
-            // Show all projects
-            filterProjects('all');
-        });
-
-        // Modal functionality
-        const modal = document.getElementById('project-modal');
-        const modalTitle = document.getElementById('modal-title');
-        const modalClient = document.getElementById('modal-client');
-        const modalDuration = document.getElementById('modal-duration');
-        const modalIndustry = document.getElementById('modal-industry');
-        const modalCategory = document.getElementById('modal-category');
-        const modalDescription = document.getElementById('modal-description');
-        const modalTechnologies = document.getElementById('modal-technologies');
-        const modalFeatures = document.getElementById('modal-features');
-        const modalResults = document.getElementById('modal-results');
-        const modalGallery = document.getElementById('modal-gallery');
-        const closeModal = document.getElementById('close-modal');
-        const prevProject = document.getElementById('prev-project');
-        const nextProject = document.getElementById('next-project');
-
-        let currentProjectId = null;
-
-        // Open modal
-        projectCards.forEach(card => {
-            card.addEventListener('click', () => {
-                const projectId = card.getAttribute('data-project');
-                openModal(projectId);
-            });
-        });
-
-        function openModal(projectId) {
-            currentProjectId = projectId;
-            const project = projectData[projectId];
-
-            if (project) {
-                modalTitle.textContent = project.title;
-                modalClient.textContent = project.client;
-                modalDuration.textContent = project.duration;
-                modalIndustry.textContent = project.industry;
-                modalCategory.textContent = project.category;
-                modalDescription.textContent = project.description;
-
-                // Technologies
-                modalTechnologies.innerHTML = '';
-                project.technologies.forEach(tech => {
-                    const span = document.createElement('span');
-                    span.className = 'bg-secondary text-white px-3 py-1 rounded-full text-sm';
-                    span.textContent = tech;
-                    modalTechnologies.appendChild(span);
-                });
-
-                // Features
-                modalFeatures.innerHTML = '';
-                project.features.forEach(feature => {
-                    const li = document.createElement('li');
-                    li.innerHTML = `<i class="fas fa-check text-success mr-2"></i>${feature}`;
-                    modalFeatures.appendChild(li);
-                });
-
-                // Results
-                modalResults.innerHTML = '';
-                project.results.forEach(result => {
-                    const li = document.createElement('li');
-                    li.innerHTML = `<i class="fas fa-arrow-up text-success mr-2"></i>${result}`;
-                    modalResults.appendChild(li);
-                });
-
-                // Gallery
-                modalGallery.innerHTML = '';
-                project.images.forEach((image, index) => {
-                    const img = document.createElement('img');
-                    img.src = image;
-                    img.alt = project.title;
-                    img.className = 'w-full h-64 object-cover rounded-lg';
-                    img.loading = 'lazy';
-                    img.onerror = function() {
-                        this.src = 'https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
-                        this.onerror = null;
-                    };
-                    modalGallery.appendChild(img);
-                });
-
-                modal.classList.remove('hidden');
-                document.body.style.overflow = 'hidden';
-            }
-        }
-
-        // Close modal
-        closeModal.addEventListener('click', () => {
-            modal.classList.add('hidden');
-            document.body.style.overflow = 'auto';
-        });
-
-        // Close modal on backdrop click
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal) {
-                modal.classList.add('hidden');
-                document.body.style.overflow = 'auto';
-            }
-        });
-
-        // Project navigation
-        prevProject.addEventListener('click', () => {
-            const currentId = parseInt(currentProjectId);
-            const prevId = currentId > 1 ? currentId - 1 : Object.keys(projectData).length;
-            if (projectData[prevId]) {
-                openModal(prevId.toString());
-            }
-        });
-
-        nextProject.addEventListener('click', () => {
-            const currentId = parseInt(currentProjectId);
-            const nextId = currentId < Object.keys(projectData).length ? currentId + 1 : 1;
-            if (projectData[nextId]) {
-                openModal(nextId.toString());
-            }
-        });
-
-        // Load more functionality
-        const loadMoreBtn = document.getElementById('load-more-btn');
-        let visibleProjects = 8;
-
-        loadMoreBtn.addEventListener('click', () => {
-            const hiddenProjects = Array.from(projectCards).slice(visibleProjects, visibleProjects + 4);
-            
-            hiddenProjects.forEach((project, index) => {
-                setTimeout(() => {
-                    project.style.display = 'block';
-                    project.style.animation = 'fadeIn 0.5s ease-in-out';
-                }, index * 100);
-            });
-
-            visibleProjects += 4;
-
-            if (visibleProjects >= projectCards.length) {
-                loadMoreBtn.style.display = 'none';
-            }
-        });
-
-        // Initialize active filter styles
-        document.addEventListener('DOMContentLoaded', () => {
-            // Desktop
-            const activeTab = document.querySelector('.filter-tab.active');
-            if (activeTab) {
-                activeTab.classList.add('bg-primary', 'text-white');
-                activeTab.classList.remove('text-text-secondary', 'hover:text-primary');
-            }
-
-            // Mobile
-            const activeChip = document.querySelector('.filter-chip.active');
-            if (activeChip) {
-                activeChip.classList.add('bg-primary', 'text-white');
-                activeChip.classList.remove('bg-white', 'text-primary', 'border', 'border-primary');
-            }
-
-            // Hide extra projects initially
-            Array.from(projectCards).slice(8).forEach(project => {
-                project.style.display = 'none';
-            });
-        });
-
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Navbar background on scroll
-        window.addEventListener('scroll', () => {
-            const navbar = document.getElementById('navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('bg-white/95');
-                navbar.classList.remove('bg-white/90');
-            } else {
-                navbar.classList.add('bg-white/90');
-                navbar.classList.remove('bg-white/95');
-            }
-        });
-
-        // Intersection Observer for animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.animation = 'fadeIn 0.6s ease-out forwards';
-                }
-            });
-        }, observerOptions);
-
-        projectCards.forEach(card => {
-            observer.observe(card);
-        });
-
-        // Touch gestures for mobile
-        let startX = 0;
-        let startY = 0;
-
-        modal.addEventListener('touchstart', (e) => {
-            startX = e.touches[0].clientX;
-            startY = e.touches[0].clientY;
-        });
-
-        modal.addEventListener('touchend', (e) => {
-            const endX = e.changedTouches[0].clientX;
-            const endY = e.changedTouches[0].clientY;
-            const diffX = startX - endX;
-            const diffY = startY - endY;
-
-            // Horizontal swipe
-            if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 50) {
-                if (diffX > 0) {
-                    // Swipe left - next project
-                    nextProject.click();
-                } else {
-                    // Swipe right - previous project
-                    prevProject.click();
-                }
-            }
-        });
-    </script>
-<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+  function openLightbox(src, title, desc) {
+    document.getElementById('lightboxImg').src = src;
+    document.getElementById('lightboxTitle').textContent = title;
+    document.getElementById('lightboxDesc').textContent = desc;
+    document.getElementById('lightbox').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  document.addEventListener('keydown', e => { if(e.key==='Escape') closeLightbox(); });
+</script>
 </body>
 </html>
