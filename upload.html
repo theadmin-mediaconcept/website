@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Submit a Website — Amplicue Web Store</title>
+<meta name="theme-color" content="#2563EB">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="logo.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap nav-row">
+    <a href="index.html" class="brand"><img src="logo.png" alt="Amplicue"><span class="brand-text">Amplicue Web Store</span></a>
+    <div style="margin-left:auto;display:flex;align-items:center;gap:8px;">
+      <a href="index.html" class="btn btn-ghost btn-sm">← Back</a>
+      <div id="navAuth"></div>
+    </div>
+  </div>
+</nav>
+
+<main class="wrap" style="max-width:660px;padding-top:32px;padding-bottom:48px;">
+  <div class="eyebrow" style="margin-bottom:8px;">New listing</div>
+  <h1 style="font-size:26px;margin-bottom:4px;">Submit a Website</h1>
+  <p class="text-muted text-sm" style="margin-bottom:28px;">Your submission will be reviewed before going live — usually within 24–48 hours.</p>
+
+  <!-- Step indicator -->
+  <div class="steps" id="stepsBar">
+    <div class="step-item">
+      <div class="step-dot active" id="dot1">1</div>
+      <span class="step-lbl active" id="lbl1">Brand</span>
+      <div class="step-line" id="line1"></div>
+    </div>
+    <div class="step-item">
+      <div class="step-dot" id="dot2">2</div>
+      <span class="step-lbl" id="lbl2">Website</span>
+    </div>
+    <div class="step-item" style="flex:0;margin-left:8px;">
+      <div class="step-dot" id="dot3">3</div>
+      <span class="step-lbl" id="lbl3">Done</span>
+    </div>
+  </div>
+
+  <!-- Step 1: Owner / Brand -->
+  <div class="form-card" id="step1">
+    <h2 style="font-size:18px;margin-bottom:4px;">Brand & Owner Information</h2>
+    <p class="text-muted text-sm" style="margin-bottom:20px;">Tell us about you and the brand behind this website.</p>
+    <form id="ownerForm">
+      <div class="grid-2">
+        <div class="field">
+          <label for="ownerName">Full name <span style="color:var(--error)">*</span></label>
+          <input class="input" id="ownerName" type="text" placeholder="Ada Lovelace" required>
+        </div>
+        <div class="field">
+          <label for="brandName">Brand / Business name <span style="color:var(--error)">*</span></label>
+          <input class="input" id="brandName" type="text" placeholder="Acme Corp" required>
+        </div>
+      </div>
+      <div class="field">
+        <label for="ownerEmail">Email address <span style="color:var(--error)">*</span></label>
+        <input class="input" id="ownerEmail" type="email" placeholder="you@example.com" required>
+      </div>
+      <div class="grid-2">
+        <div class="field">
+          <label for="ownerPhone">Phone</label>
+          <input class="input" id="ownerPhone" type="tel" placeholder="+234 800 000 0000">
+        </div>
+        <div class="field">
+          <label for="ownerCountry">Country</label>
+          <select class="input sel" id="ownerCountry">
+            <option value="">Select…</option>
+            <option>Nigeria</option><option>United States</option><option>United Kingdom</option>
+            <option>Canada</option><option>Ghana</option><option>Kenya</option><option>South Africa</option><option>India</option><option>Other</option>
+          </select>
+        </div>
+      </div>
+      <div class="field">
+        <label for="ownerSocial">Social or portfolio links</label>
+        <input class="input" id="ownerSocial" type="text" placeholder="twitter.com/you, linkedin.com/in/you">
+      </div>
+      <label class="check-row">
+        <input type="checkbox" id="ownerVerify">
+        <span>Request verification for this brand (reviewed by admin)</span>
+      </label>
+      <div style="margin-top:20px;display:flex;justify-content:flex-end;">
+        <button type="submit" class="btn btn-primary">
+          Continue to website details
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+    </form>
+  </div>
+
+  <!-- Step 2: Website details -->
+  <div class="form-card hidden" id="step2">
+    <div id="brandSummary" style="font-size:13px;color:var(--text-3);margin-bottom:18px;padding:10px 14px;background:var(--bg-soft);border-radius:var(--r-s);border:1px solid var(--line);"></div>
+    <h2 style="font-size:18px;margin-bottom:4px;">Website Details</h2>
+    <p class="text-muted text-sm" style="margin-bottom:20px;">Tell visitors about this website.</p>
+    <form id="siteForm">
+      <div class="field">
+        <label for="siteName">Website name <span style="color:var(--error)">*</span></label>
+        <input class="input" id="siteName" type="text" placeholder="My Awesome Website" required>
+      </div>
+      <div class="field">
+        <label for="siteUrl">Website URL <span style="color:var(--error)">*</span></label>
+        <input class="input" id="siteUrl" type="url" placeholder="https://example.com" required>
+      </div>
+      <div class="field">
+        <label for="siteCategory">Category <span style="color:var(--error)">*</span></label>
+        <select class="input sel" id="siteCategory" required></select>
+      </div>
+      <div class="field">
+        <label for="siteDesc">Description <span style="color:var(--error)">*</span></label>
+        <textarea class="textarea" id="siteDesc" placeholder="Describe what this website does, who it's for, and what makes it special…" style="min-height:110px;" required></textarea>
+      </div>
+      <div class="field">
+        <label for="siteTags">Tags <span style="font-weight:400;color:var(--text-3);">(comma-separated, up to 8)</span></label>
+        <input class="input" id="siteTags" type="text" placeholder="fintech, mobile, Africa">
+      </div>
+      <div class="field">
+        <label>Logo</label>
+        <div class="drop-zone" id="logoZone">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="margin:0 auto;"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          <p id="logoLabel">Click or drag to upload logo (PNG, JPG — max 5 MB)</p>
+          <input id="logoInput" type="file" accept="image/*" class="hidden">
+        </div>
+        <img id="logoPrev" class="hidden" style="width:72px;height:72px;border-radius:12px;border:1px solid var(--line);object-fit:cover;margin-top:10px;" alt="Logo preview">
+      </div>
+      <div class="field">
+        <label>Screenshots <span style="font-weight:400;color:var(--text-3);">(up to 6)</span></label>
+        <div class="drop-zone" id="shotZone">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="margin:0 auto;"><rect x="3" y="3" width="18" height="14" rx="2"/><line x1="3" y1="20" x2="21" y2="20"/></svg>
+          <p>Click or drag to upload screenshots</p>
+          <input id="shotInput" type="file" accept="image/*" multiple class="hidden">
+        </div>
+        <div id="shotPreviews" class="shot-row"></div>
+        <div id="shotCount" style="font-size:12px;color:var(--text-3);margin-top:4px;">0/6 selected</div>
+      </div>
+      <div style="display:flex;justify-content:space-between;margin-top:8px;flex-wrap:wrap;gap:10px;">
+        <button type="button" class="btn btn-ghost" onclick="goStep(1)">← Back</button>
+        <button type="submit" class="btn btn-primary">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+          Submit for review
+        </button>
+      </div>
+    </form>
+  </div>
+
+  <!-- Step 3: Success -->
+  <div class="form-card hidden" id="step3" style="text-align:center;padding:48px 24px;">
+    <div style="width:64px;height:64px;border-radius:50%;background:var(--success-lt);display:flex;align-items:center;justify-content:center;margin:0 auto 20px;">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--success)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+    </div>
+    <h2 style="font-size:22px;margin-bottom:8px;">Submission received!</h2>
+    <p class="text-muted" style="margin-bottom:28px;max-width:380px;margin-left:auto;margin-right:auto;">Your website is pending review. Our team will verify it and notify you once it goes live — usually within 24–48 hours.</p>
+    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+      <a href="index.html" class="btn btn-primary">Explore directory</a>
+      <a href="dashboard.html" class="btn">View my submissions</a>
+    </div>
+  </div>
+</main>
+
+<nav class="bottom-nav">
+  <a href="index.html" class="bnav-item">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>Home
+  </a>
+  <a href="upload.html" class="bnav-item active">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>Submit
+  </a>
+  <a href="profile.html" class="bnav-item">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Profile
+  </a>
+</nav>
+
+<script type="module" src="firebase-config.js"></script>
+<script type="module" src="app.js"></script>
+</body>
+</html>
